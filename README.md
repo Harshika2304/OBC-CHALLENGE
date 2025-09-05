@@ -27,11 +27,9 @@ Since i have not been taught C++ before, I have used the help of AI to debug the
 
 1)Added #include <cstring> so that memset/memcpy in .cpp compile.
 
-2)Left PIDController* pid_controllers_[3] but made sure they are handled in constructor/destructor.
+2)No std::array / smart pointers →  kept the original structure written.
 
-3)No std::array / smart pointers →  kept the original structure written.
-
-4)Compatible with previous adcs_controller.cpp.
+3)Compatible with previous adcs_controller.cpp.
 
 ### THRD FILE-(microcontroller.cpp)
 1)Added a null check before calling adcs_controller_->computeControl(...) so we never dereference a null pointer.
@@ -51,4 +49,10 @@ Since i have not been taught C++ before, I have used the help of AI to debug the
 (since they are top-level structs, not nested in the class)
 
 
-### FIFTH FILE(
+And similarly, analysing the bugs and debugging for the rest of the files.All the debugged files are attached.
+
+## 2) ***INTEGRATION :***
+
+
+
+
