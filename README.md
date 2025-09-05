@@ -77,10 +77,10 @@ docker run -it --cap-add=sys_nice --cap-add=ipc_lock --cap-add=SYS_RESOURCE \
 --user root --name adcs_sim -v C:/Users/benny/cFS:/home/cFS \
 hk2989441/adcs_sim:test2
 
-# Enter container terminal
+#Enter container terminal
 docker exec -it adcs_sim /bin/bash
 
-# Inside container
+#Inside container
 cd /home/cFS
 make distclean
 make SIMULATION=native prep
@@ -108,7 +108,7 @@ Fix: I spent time understanding how telemetry data flows and how the Python code
 
 Since i didn't have time to complete the project, i would have emphasized completely integrating the telemetry Python code with the C++ program to receive live data exchanged between them. My strategy would be to first specify the data structure format that the C++ program outputs so that the python code can read it without complications. I would test this exchange step by step, beginning with basic file outputs or socket connections, and then progress to a live connection.
 
-The greatest blockers I encountered were time and some confusion regarding how precisely the telemetry data must be passed from the C++ simulation to the Python script. Additionally, it took some time to set up the build environment within docker, which cut into how much time I could have devoted to the telemetry integration. I would prioritize specifying the format of telemetry data upfront and design small tests to test end to end data transfer prior to constructing the complete system.
+Some blockers I faced were time and some confusion regarding how the telemetry data gets passed from the C++ simulation to the Python script. Additionally, it took some time to set up the build environment within docker, which cut into how much time I could have devoted to the telemetry integration. I would prioritize specifying the format of telemetry data upfront and design small tests to test end to end data transfer before constructing the complete system.
 
 
 
